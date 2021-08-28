@@ -1,15 +1,28 @@
 package br.com.fiap.webshift.model;
 
-public class UsuarioModel {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="USUARIO")
+public class UsuarioModel {
+	
+    @Id
+    @Column(name="ID_USUARIO")
 	private int id;
 
+    @Column(name="NOME")
 	private String nome;
 
+    @Column(name="EMAIL")
 	private String email;
 
+    @Column(name="SENHA")
 	private String senha;
 
+    @Column(name="FOTO")
 	private String foto;
 
 	public UsuarioModel() {
