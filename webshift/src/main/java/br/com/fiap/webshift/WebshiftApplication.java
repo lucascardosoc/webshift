@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication()
 @EnableAutoConfiguration
 @ComponentScan(basePackages={"br.com.fiap.webshift"})
-//@EnableJpaRepositories(basePackages="br.com.fiap.webshift.repository")
+@EnableJpaRepositories(basePackages="br.com.fiap.webshift.repository")
 @EnableTransactionManagement
 @EntityScan(basePackages="")
 
