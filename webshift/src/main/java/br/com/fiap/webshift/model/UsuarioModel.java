@@ -2,7 +2,10 @@ package br.com.fiap.webshift.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +14,8 @@ public class UsuarioModel {
 	
     @Id
     @Column(name="ID_USUARIO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USUARIO_SEQ")
+    @SequenceGenerator(name="USUARIO_SEQ", initialValue = 1, allocationSize = 1)
 	private int id;
 
     @Column(name="NOME")
@@ -24,6 +29,9 @@ public class UsuarioModel {
 
     @Column(name="FOTO")
 	private String foto;
+    
+    @Column(name="IDADE")
+    private int idade;
 
 	public UsuarioModel() {
 		super();
@@ -43,6 +51,16 @@ public class UsuarioModel {
 		this.email = email;
 		this.senha = senha;
 		this.foto = foto;
+	}
+	
+	
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
 	@Override
